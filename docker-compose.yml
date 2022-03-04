@@ -1,0 +1,22 @@
+version: '3.5'
+services:
+  php:
+    build:
+      context: ./.docker/php
+      args:
+        uid: ${UID}
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APACHE_RUN_USER=#${UID}
+      - APACHE_RUN_GROUP=#${UID}
+    ports:
+      - "8000:80"
+    networks:
+      default:
+        aliases:
+          - "default"
+
+networks:
+  default:
+    name: backend-network

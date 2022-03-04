@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div class="header rounded">
+        Create TODO task
+    </div>
+    <form class="todo" action="/todos/{{ todoItem.id }}" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+            <label>name:</label>
+            <input class="form-control" type="text" name="name" value="{{ todoItem.name }}">
+        </div>
+        <div class="form-group">
+            <label>priority:</label>
+            <input class="form-control" type="number" min="0" name="priority" value="{{ todoItem.priority }}">
+        </div>
+        <div class="form-group">
+            <label>status:</label>
+            <select class="form-control" name="status">
+                <option value="pending" {% if todoItem.status == 'pending' %}selected{% endif %}>pending</option>
+                <option value="done" {% if todoItem.status == 'done' %}selected{% endif %}>done</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit">Save task</button>
+        </div>
+    </form>
+
+{% endblock %}

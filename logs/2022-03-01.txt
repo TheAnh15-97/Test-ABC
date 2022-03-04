@@ -1,0 +1,33 @@
+[01-Mar-2022 12:19:36 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 /var/www/html/public/index.php(19): Core\Router->dispatch('todosfdg')
+#1 {main}
+Thrown in '/var/www/html/Core/Router.php' on line 78
+[01-Mar-2022 12:19:37 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "base.html" (looked into: /var/www/html/App/Views) in "404.html" at line 1. in /var/www/html/vendor/twig/twig/src/Loader/FilesystemLoader.php:250
+Stack trace:
+#0 /var/www/html/vendor/twig/twig/src/Loader/FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('base.html')
+#1 /var/www/html/vendor/twig/twig/src/Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('base.html')
+#2 /var/www/html/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('base.html')
+#3 /var/www/html/vendor/twig/twig/src/Template.php(333): Twig\Environment->loadTemplate('base.html', NULL)
+#4 /var/www/html/vendor/twig/twig/src/Environment.php(418) : eval()'d code(42): Twig\Template->loadTemplate('base.html', '404.html', 1)
+#5 /var/www/html/vendor/twig/twig/src/Template.php(405): __TwigTemplate_4a93ca3c55bc20f7e50b0041d17f8363fde51dd392336a451c372ffcee75e38f->doDisplay(Array, Array)
+#6 /var/www/html/vendor/twig/twig/src/Template.php(378): Twig\Template->displayWithErrorHandling(Array, Array)
+#7 /var/www/html/vendor/twig/twig/src/Template.php(390): Twig\Template->display(Array)
+#8 /var/www/html/vendor/twig/twig/src/TemplateWrapper.php(45): Twig\Template->render(Array, Array)
+#9 /var/www/html/vendor/twig/twig/src/Environment.php(318): Twig\TemplateWrapper->render(Array)
+#10 /var/www/html/Core/View.php(44): Twig\Environment->render('404.html', Array)
+#11 /var/www/html/Core/Error.php(54): Core\View::renderTemplate('404.html')
+#12 [internal function]: Core\Error::exceptionHandler(Object(Exception))
+#13 {main}
+  thrown in /var/www/html/vendor/twig/twig/src/Loader/FilesystemLoader.php on line 250
+[01-Mar-2022 12:19:58 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 /var/www/html/public/index.php(19): Core\Router->dispatch('todosfdg')
+#1 {main}
+Thrown in '/var/www/html/Core/Router.php' on line 78
+[01-Mar-2022 12:20:25 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 /var/www/html/public/index.php(19): Core\Router->dispatch('todosfdg')
+#1 {main}
+Thrown in '/var/www/html/Core/Router.php' on line 78
+[01-Mar-2022 12:20:31 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 /var/www/html/public/index.php(19): Core\Router->dispatch('')
+#1 {main}
+Thrown in '/var/www/html/Core/Router.php' on line 78

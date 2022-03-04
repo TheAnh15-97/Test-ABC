@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div class="header rounded">
+        TODO Tasks
+    </div>
+    <div class="todo rounded">
+        <form action="todos/create" method="get">
+            <button type="submit">Create task</button>
+        </form>
+        {% for todoItem in todoItems %}
+            <div class="todo__item">
+                {% if todoItem.status == 'done' %}
+                    <img class="todo__item__icon"
+                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/512px-Flat_tick_icon.svg.png?20170316053531">
+                {% else %}
+                    <img class="todo__item__icon"
+                         src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-tick-vector-icon-png-image_4236990.jpg">
+                {% endif %}
+                <a href="/todos/{{ todoItem.id }}/edit">* {{ todoItem.name }}</a>
+                <span class="todo__item__status">{{ todoItem.status }}</span>
+                <form method="post" action="/todos/{{ todoItem.id }}">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit">
+                        delete
+                    </button>
+                </form>
+            </div>
+        {% else %}
+            No todo item have been found.
+        {% endfor %}
+    </div>
+{% endblock %}
